@@ -38,9 +38,9 @@
 			-->
 			<div data-role="footer" data-position="fixed" data-fullscreen="true" class="ui-bar" data-id="common_navi">
 			<?php
-				echo $this->Html->link('Home','/pages/home', array('class' => 'ui-btn ui-btn-a'));
-				echo $this->Html->link('Mypage','/pages/mypage', array('class' => 'ui-btn ui-btn-a'));
-				echo $this->Html->link('Help','/pages/help', array('class' => 'ui-btn ui-btn-a'));
+				echo $this->Html->link('Home','/', array('class' => 'ui-btn ui-btn-a'));
+				echo $this->Html->link('Mypage','/mypage', array('class' => 'ui-btn ui-btn-a'));
+				echo $this->Html->link('Help','/help', array('class' => 'ui-btn ui-btn-a'));
 			?>
 			</div>
 		</div>

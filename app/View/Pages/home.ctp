@@ -15,11 +15,11 @@
 		<!-- header -->
 		<div data-role="header" data-theme="b">
 		<?php
-			echo $this->Html->link('MyPage','/pages/mypage', array('class' => 'ui-btn ui-btn-a ui-btn-left'));
+			echo $this->Html->link('MyPage','/mypage', array('class' => 'ui-btn ui-btn-a ui-btn-left'));
 		?>
 			<h1>ToDoアプリ</h1>
 		<?php
-			echo $this->Html->link('About','/HelpPage/help', array('class' => 'ui-btn ui-btn-a ui-btn-right'));
+			echo $this->Html->link('About','/help', array('class' => 'ui-btn ui-btn-a ui-btn-right'));
 		?>
 		</div>
 
@@ -28,15 +28,16 @@
 			<h1>TO DOアプリ</h1>
 
 			<!-- TODOの入力フォーム  -->
-			<form>
+			<form method="post" action="./">
 				<!-- TODOの入力 -->
 				<div class="ui-field-contain">
 					<label for="entry_comment">コメント：</label>
 					<input id="entry_comment" name="entry_comment" type="text" />
 				</div>
+				<!-- gridで横にボタン並べる -->
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a">
-						<input type="button" value="TODO登録" />
+						<input type="submit" value="TODO登録" />
 					</div>
 					<div class="ui-block-b">
 						<input type="reset" value="入力クリア" />
@@ -46,7 +47,10 @@
 
 			<!-- TODOの表示 -->
 			<div>
-
+                <?php
+                    if(isset($todo))
+                        echo $todo;
+                ?>
 			</div>
 
 		</div>
@@ -59,9 +63,9 @@
 		<div data-role="footer" data-position="fixed" data-fullscreen="true"
 			class="ui-bar" data-id="common_navi">
 			<?php
-				echo $this->Html->link('Home','/pages/home', array('class' => 'ui-btn ui-btn-a'));
-				echo $this->Html->link('Mypage','/pages/mypage', array('class' => 'ui-btn ui-btn-a'));
-				echo $this->Html->link('Help','/pages/help', array('class' => 'ui-btn ui-btn-a'));
+				echo $this->Html->link('Home','/', array('class' => 'ui-btn ui-btn-a'));
+				echo $this->Html->link('Mypage','/mypage', array('class' => 'ui-btn ui-btn-a'));
+				echo $this->Html->link('Help','/help', array('class' => 'ui-btn ui-btn-a'));
 			?>
 		</div>
 	</div>
