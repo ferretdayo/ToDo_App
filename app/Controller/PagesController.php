@@ -29,9 +29,12 @@ App::uses('AppController', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers/pages-controller.html
  */
 class PagesController extends AppController {
+	//利用するModel名をarrayに追加
+	public $uses = array('TodoList');
     //Home画面
     public function index(){
-    	$todolist = array("aaaaaa", "iiiii");
+		//$this->loadModel('TodoList');
+		$todolist = $this->TodoList->find('all');
 		//TODO MySQLからデータの取得
     	$this->set('todolist', $todolist);
     	$this->render('/Pages/home');
@@ -45,15 +48,17 @@ class PagesController extends AppController {
     //TODOのPOST
     public function store(){
     	if($this->request->is('post')){
-			//if($this->todo_app->save($this->request->data)){
+			$this->request->data['TodoList']['done'] = 0;
+			$this->request->data['TodoList']['create_at'] = date("Y/m/d H:i:s");
+			$this->request->data['TodoList']['delete_at'] = null;
+			if($this->TodoList->save($this->request->data)){
 				// メッセージをセットしてリダイレクトする
 				$this->Session->setFlash('ToDo Saved!');
 				$this->redirect("/");
-			//}
+			}
     	}
-        //$todo = $this->request->data['entry_comment'];
         //home.ctpにリダイレクト
-        $this->redirect('/');
+        $this->render('/Pages/home');
     }
 
 }

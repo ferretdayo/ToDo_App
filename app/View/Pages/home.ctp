@@ -34,11 +34,10 @@
 			<h1>TO DOアプリ</h1>
 
 			<!-- TODOの入力フォーム  -->
-			<form method="post">
+			<?php echo $this->Form->create(); ?>
 				<!-- TODOの入力 -->
 				<div class="ui-field-contain">
-					<label for="entry_comment">コメント：</label>
-					<input id="entry_comment" name="entry_comment" type="text" />
+					<?php echo $this->Form->input('todo'); ?>
 				</div>
 				<!-- gridで横にボタン並べる -->
 				<fieldset class="ui-grid-a">
@@ -49,15 +48,33 @@
 						<input type="reset" value="入力クリア" />
 					</div>
 				</fieldset>
-			</form>
-
+			<!--</form>-->
+			<?php echo $this->Form->end(); ?>
 			<!-- TODOの表示 -->
 			<div>
-                <?php
-                    if(isset($todolist))
-						for($i=0;$i < count($todolist);$i++)
-	                        echo $todolist[$i]."<br>";
-                ?>
+				<table id="tbl" data-role="table" data-mode="reflow" class="ui-responsive">
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>TODO</th>
+							<th>作成日時</th>
+							<th>削除日時</th>
+							<th>Done</th>
+							<th>Delete</th>
+						</tr>
+				<?php
+                    if(isset($todolist)){
+						for($i=0;$i < count($todolist);$i++){
+							echo "<tr>";
+							echo "<td>".$todolist[$i]["TodoList"]["id"]."</td>";
+							echo "<td>".$todolist[$i]["TodoList"]["todo"]."</td>";
+							echo "<td>".$todolist[$i]["TodoList"]["create_at"]."</td>";
+							echo "<td>".$todolist[$i]["TodoList"]["delete_at"]."</td>";
+							echo "</tr>";
+						}
+					}
+				?>
+				</table>
 			</div>
 
 		</div>
