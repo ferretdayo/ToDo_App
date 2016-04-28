@@ -34,7 +34,7 @@
 			<h1>TO DOアプリ</h1>
 
 			<!-- TODOの入力フォーム  -->
-			<form method="post" action="./">
+			<form method="post">
 				<!-- TODOの入力 -->
 				<div class="ui-field-contain">
 					<label for="entry_comment">コメント：</label>
@@ -54,8 +54,9 @@
 			<!-- TODOの表示 -->
 			<div>
                 <?php
-                    if(isset($todo))
-                        echo $todo;
+                    if(isset($todolist))
+						for($i=0;$i < count($todolist);$i++)
+	                        echo $todolist[$i]."<br>";
                 ?>
 			</div>
 

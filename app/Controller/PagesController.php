@@ -31,19 +31,29 @@ App::uses('AppController', 'Controller');
 class PagesController extends AppController {
     //Home画面
     public function index(){
-        $this->render('/Pages/home');
+    	$todolist = array("aaaaaa", "iiiii");
+		//TODO MySQLからデータの取得
+    	$this->set('todolist', $todolist);
+    	$this->render('/Pages/home');
     }
-    
+
     //MyPage画面
     public function mypage(){
         $this->render('/Pages/mypage');
     }
-    
+
     //TODOのPOST
     public function store(){
-        $todo = $this->request->data['entry_comment'];
-        $this->set('todo',$todo);
-        $this->render('/Pages/home');
-    }    
-    
+    	if($this->request->is('post')){
+			//if($this->todo_app->save($this->request->data)){
+				// メッセージをセットしてリダイレクトする
+				$this->Session->setFlash('ToDo Saved!');
+				$this->redirect("/");
+			//}
+    	}
+        //$todo = $this->request->data['entry_comment'];
+        //home.ctpにリダイレクト
+        $this->redirect('/');
+    }
+
 }
