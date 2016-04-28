@@ -5,7 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>jQuery Mobile</title>
 	<?php
+        //./webroot/cssの中のフォルダ
 		echo $this->Html->css('jquery.mobile-1.4.5.min.css');
+        //./webroot/jsの中のフォルダ
 		echo $this->Html->script('jquery-2.2.3.min.js');
 		echo $this->Html->script('jquery.mobile-1.4.5.min.js');
 	?>
@@ -15,6 +17,10 @@
 		<!-- header -->
 		<div data-role="header" data-theme="b">
 		<?php
+            /*
+                <a href="/mypage" class="ui-btn ui-btn-a ui-btn-left">MyPage</a>
+                と表示される
+            */
 			echo $this->Html->link('MyPage','/mypage', array('class' => 'ui-btn ui-btn-a ui-btn-left'));
 		?>
 			<h1>ToDoアプリ</h1>
