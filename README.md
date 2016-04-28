@@ -57,7 +57,9 @@ Our primary goal is to provide a structured framework that enables PHP users at 
 
 	$ cp app/Config/database.php.default app/Config/database.php
 
+
 	その後、database.phpの中身を
+
 
 	```php
 	class DATABASE_CONFIG {
