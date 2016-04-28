@@ -55,6 +55,8 @@ Our primary goal is to provide a structured framework that enables PHP users at 
 
 	$ cd ToDo_App
 
+### DBの設定
+
 	$ cp app/Config/database.php.default app/Config/database.php
 
 
