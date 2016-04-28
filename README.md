@@ -60,33 +60,31 @@ Our primary goal is to provide a structured framework that enables PHP users at 
 	$ cp app/Config/database.php.default app/Config/database.php
 
 
-	その後、database.phpの中身を
+その後、database.phpの中身を
 
 
-	```php
+```php
 	class DATABASE_CONFIG {
-
-	public $default = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => 'password',
-		'database' => 'todo_app',
-		'prefix' => '',
-		'encoding' => 'utf8',
-	);
-
-	public $test = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => 'password',
-		'database' => 'todo_app',
-		'prefix' => '',
-		'encoding' => 'utf8',
-	);
-}
-	```
-	としてください。loginとpasswordはそれぞれの環境に合わせてください。
+		public $default = array(
+			'datasource' => 'Database/Mysql',
+			'persistent' => false,
+			'host' => 'localhost',
+			'login' => 'root',
+			'password' => 'password',
+			'database' => 'todo_app',
+			'prefix' => '',
+			'encoding' => 'utf8',
+		);
+		public $test = array(
+			'datasource' => 'Database/Mysql',
+			'persistent' => false,
+			'host' => 'localhost',
+			'login' => 'root',
+			'password' => 'password',
+			'database' => 'todo_app',
+			'prefix' => '',
+			'encoding' => 'utf8',
+		);
+	}
+```
+としてください。loginとpasswordはそれぞれの環境に合わせてください。
