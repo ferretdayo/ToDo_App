@@ -48,3 +48,41 @@ Our primary goal is to provide a structured framework that enables PHP users at 
 [CONTRIBUTING.md](CONTRIBUTING.md) - Quick pointers for contributing to the CakePHP project
 
 [CookBook "Contributing" Section (2.x)](http://book.cakephp.org/2.0/en/contributing.html) [(3.0)](http://book.cakephp.org/3.0/en/contributing.html) - Version-specific details about contributing to the project
+
+## 導入方法
+
+	$ git clone https://github.com/ferretdayo/ToDo_App.git
+
+	$ cd ToDo_App
+
+	$ cp app/Config/database.php.default app/Config/database.php
+
+	その後、database.phpの中身を
+
+	```
+	class DATABASE_CONFIG {
+
+	public $default = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'root',
+		'password' => 'password',
+		'database' => 'todo_app',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
+
+	public $test = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'root',
+		'password' => 'password',
+		'database' => 'todo_app',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
+}
+	```
+	としてください。loginとpasswordはそれぞれの環境に合わせてください。
