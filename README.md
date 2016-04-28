@@ -59,7 +59,7 @@ Our primary goal is to provide a structured framework that enables PHP users at 
 
 	その後、database.phpの中身を
 
-	```
+	```php
 	class DATABASE_CONFIG {
 
 	public $default = array(
