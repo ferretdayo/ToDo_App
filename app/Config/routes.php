@@ -27,6 +27,10 @@
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'index', '[method]' => 'GET'));
     Router::connect('/', array('controller' => 'pages', 'action' => 'store', '[method]' => 'POST'));
+    
+    Router::connect('/delcomment/:id', array('controller' => 'pages', 'action' => 'delete', '[method]' => 'GET'));
+    
+    Router::connect('/done/:id/:done', array('controller' => 'pages', 'action' => 'done', '[method]' => 'GET'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */

@@ -45,7 +45,7 @@ class PagesController extends AppController {
         $this->render('/Pages/mypage');
     }
 
-    //TODOのPOST
+    //TODOデータの保存
     public function store(){
     	if($this->request->is('post')){
 			$this->request->data['TodoList']['done'] = 0;
@@ -59,6 +59,35 @@ class PagesController extends AppController {
     	}
         //home.ctpにリダイレクト
         $this->render('/Pages/home');
+    }
+    
+    //TODOデータの削除
+    public function delete(){
+        //$this->request->data['TodoList']['id'] = $id;
+        //指定されたidがあれば削除
+        if($this->params['id']){
+            if($this->TodoList->delete($this->params['id'])){
+                $this->redirect('/');
+            }
+        }
+        $this->redirect('/');
+    }
+    
+    //TODOデータのDONE
+    public function done(){
+        $data = array();
+        $conditions = array('id' => $this->params['id']);
+        if($this->params['id']){
+            if($this->params['done']){
+                $data = array('done' => 0);
+            }else{
+                $data = array('done' => 1);
+            }
+            if($this->TodoList->updateAll($data, $conditions)){
+                $this->redirect('/');
+            }
+        }
+        $this->redirect('/');
     }
 
 }

@@ -58,19 +58,29 @@
 							<th>id</th>
 							<th>TODO</th>
 							<th>作成日時</th>
-							<th>削除日時</th>
 							<th>Done</th>
 							<th>Delete</th>
 						</tr>
 				<?php
                     if(isset($todolist)){
 						for($i=0;$i < count($todolist);$i++){
-							echo "<tr>";
-							echo "<td>".$todolist[$i]["TodoList"]["id"]."</td>";
-							echo "<td>".$todolist[$i]["TodoList"]["todo"]."</td>";
-							echo "<td>".$todolist[$i]["TodoList"]["create_at"]."</td>";
-							echo "<td>".$todolist[$i]["TodoList"]["delete_at"]."</td>";
-							echo "</tr>";
+                            if($todolist[$i]["TodoList"]["done"] == 1){
+                                echo "<tr style='opacity: 0.2'>";
+                                echo "<td>".$todolist[$i]["TodoList"]["id"]."</td>";
+                                echo "<td><s>".$todolist[$i]["TodoList"]["todo"]."</s></td>";
+                                echo "<td>".$todolist[$i]["TodoList"]["create_at"]."</td>";
+                                echo "<td><input type='checkbox' name='checkbox-2' class='custom' id='checkbox-".$todolist[$i]["TodoList"]["id"]."' onClick='location.href=\"./done/".$todolist[$i]["TodoList"]["id"]."/1\"' checked='checked'><label for='checkbox-".$todolist[$i]["TodoList"]["id"]."'>Done</label></td>";
+                                echo "<td><input type='button'  onClick='location.href=\"./delcomment/".$todolist[$i]["TodoList"]["id"]."\"' value='削除'></td>";
+                                echo "</tr>\n";
+                            }else{
+                                echo "<tr>";
+                                echo "<td>".$todolist[$i]["TodoList"]["id"]."</td>";
+                                echo "<td>".$todolist[$i]["TodoList"]["todo"]."</td>";
+                                echo "<td>".$todolist[$i]["TodoList"]["create_at"]."</td>";
+                                echo "<td><input type='checkbox' name='checkbox-2' class='custom' id='checkbox-".$todolist[$i]["TodoList"]["id"]."' onClick='location.href=\"./done/".$todolist[$i]["TodoList"]["id"]."/0\"'><label for='checkbox-".$todolist[$i]["TodoList"]["id"]."'>Done</label></td>";
+                                echo "<td><input type='button'  onClick='location.href=\"./delcomment/".$todolist[$i]["TodoList"]["id"]."\"' value='削除'></td>";
+                                echo "</tr>\n";
+                            }
 						}
 					}
 				?>
