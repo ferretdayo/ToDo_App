@@ -52,7 +52,7 @@
 			<?php echo $this->Form->end(); ?>
 			<!-- TODOの表示 -->
 			<div>
-				<table id="tbl" data-role="table" data-mode="reflow" class="ui-responsive">
+				<table id="tbl" data-role="table" data-mode="columntoggle" class="ui-responsive">
 					<thead>
 						<tr>
 							<th>id</th>
