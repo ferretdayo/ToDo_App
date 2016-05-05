@@ -25,18 +25,41 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-	Router::connect('/', array('controller' => 'pages', 'action' => 'index', '[method]' => 'GET'));
-    Router::connect('/', array('controller' => 'pages', 'action' => 'store', '[method]' => 'POST'));
+	Router::connect('/', array(
+		'controller' => 'pages',
+		'action' => 'index',
+		'[method]' => 'GET'
+	));
     
-    Router::connect('/delcomment/:id', array('controller' => 'pages', 'action' => 'delete', '[method]' => 'GET'));
+	Router::connect('/', array(
+		'controller' => 'pages',
+		'action' => 'store',
+		'[method]' => 'POST'
+	));
     
-    Router::connect('/done/:id/:done', array('controller' => 'pages', 'action' => 'done', '[method]' => 'GET'));
+    Router::connect('/delcomment/:id', array(
+		'controller' => 'pages',
+		'action' => 'delete',
+		'[method]' => 'GET'
+	));
+    
+    Router::connect('/done/:id/:done', array(
+		'controller' => 'pages',
+		'action' => 'done',
+		'[method]' => 'GET'
+	));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
-	Router::connect('/mypage', array('controller' => 'pages', 'action' => 'mypage'));
+	Router::connect('/mypage', array(
+		'controller' => 'pages',
+		'action' => 'mypage'
+	));
 
-	Router::connect('/help', array('controller' => 'helppage', 'action' => 'index'));
+	Router::connect('/help', array(
+		'controller' => 'helppage',
+		'action' => 'index'
+	));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
