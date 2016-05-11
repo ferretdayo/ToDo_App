@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `todo_list`
+-- テーブルの構造 `todo_lists`
 --
 
-CREATE TABLE `todo_list` (
+CREATE TABLE `todo_lists` (
   `id` int(11) NOT NULL,
   `todo` text,
   `done` tinyint(1) DEFAULT NULL,
@@ -39,9 +39,9 @@ CREATE TABLE `todo_list` (
 --
 
 --
--- Indexes for table `todo_list`
+-- Indexes for table `todo_lists`
 --
-ALTER TABLE `todo_list`
+ALTER TABLE `todo_lists`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -49,9 +49,9 @@ ALTER TABLE `todo_list`
 --
 
 --
--- AUTO_INCREMENT for table `todo_list`
+-- AUTO_INCREMENT for table `todo_lists`
 --
-ALTER TABLE `todo_list`
+ALTER TABLE `todo_lists`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
