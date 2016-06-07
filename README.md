@@ -1,4 +1,4 @@
-![https://travis-ci.org/tsukuba-pbl/16-4_Web.svg?branch=test](https://travis-ci.org/tsukuba-pbl/16-4_Web.svg?branch=test)
+![https://travis-ci.org/ferretdayo/ToDo_App.svg?branch=master](https://travis-ci.org/ferretdayo/ToDo_App.svg?branch=master)
 
 # TODOアプリ
 利用技術
